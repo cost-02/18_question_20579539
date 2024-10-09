@@ -55,9 +55,9 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
-        ./gradlew clean
-        ./gradlew build
-      # Sostituisce il placeholder con comandi reali per costruire il tuo progetto Gradle
+        chmod +x ./gradlew
+        ./gradlew clean --info
+        ./gradlew build --info
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
